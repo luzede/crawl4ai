@@ -322,6 +322,12 @@ RunManyReturn = Union[
     AsyncGenerator[CrawlResultT, None]
 ]
 
+RunReturn = Union[
+    CrawlResultContainer[CrawlResultT],
+    CrawlResultT
+]
+    
+
 
 # END of backward compatibility code for markdown/markdown_v2.
 # When removing this code in the future, make sure to:

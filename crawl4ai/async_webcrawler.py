@@ -16,7 +16,8 @@ from .models import (
     DispatchResult,
     ScrapingResult,
     CrawlResultContainer,
-    RunManyReturn
+    RunManyReturn,
+    RunReturn
 )
 from .async_database import async_db_manager
 from .chunking_strategy import *  # noqa: F403
@@ -165,7 +166,7 @@ class AsyncWebCrawler:
 
         self.ready = False
 
-        # Decorate arun method with deep crawling capabilities
+        # Decorate  method with deep crawling capabilities
         self._deep_handler = DeepCrawlDecorator(self)
         self.arun = self._deep_handler(self.arun)
         
@@ -210,7 +211,7 @@ class AsyncWebCrawler:
         url: str,
         config: CrawlerRunConfig = None,
         **kwargs,
-    ) -> RunManyReturn:
+    ) -> RunReturn:
         """
         Runs the crawler for a single source: URL (web, local file, or raw HTML).
 

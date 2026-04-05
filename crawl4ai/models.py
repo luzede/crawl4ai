@@ -318,8 +318,8 @@ class CrawlResultContainer(Generic[CrawlResultT]):
         return f"{self.__class__.__name__}({self._results!r})"
 
 RunManyReturn = Union[
-    CrawlResultContainer[CrawlResult],
-    AsyncGenerator[CrawlResult, None]
+    CrawlResultContainer[CrawlResultT],
+    AsyncGenerator[CrawlResultT, None]
 ]
 
 RunReturn = Union[
